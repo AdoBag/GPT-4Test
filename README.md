@@ -8,6 +8,7 @@ This is a part of a Bachelor's Research Project (2023-24 Q4) of TU Delft.
 - If you have any questions feel free to reach out to `adobag@gmail.com`
 - The research paper is also included with the repository
 - If you want to see the original tests discussed in the paper, check out the `experiment_with_data` branch
+- If your code has any dependencies that all classes should use, put them in `TestExecutor/src/main/java/org/example/dependencies`
 
 ## To run the project
 
