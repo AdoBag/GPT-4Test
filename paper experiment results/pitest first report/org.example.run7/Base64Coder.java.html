@@ -1,0 +1,2855 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>Base64Coder.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package org.example.run7;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* A Base64 Encoder/Decoder.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>*</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* &#60;p&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* This class is used to encode and decode data in Base64 format as described in RFC 1521.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>*</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* &#60;p&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* This is &#34;Open Source&#34; software and released under the &#60;a href=&#34;http://www.gnu.org/licenses/lgpl.html&#34;&#62;GNU/LGPL&#60;/a&#62; license.&#60;br&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* It is provided &#34;as is&#34; without warranty of any kind.&#60;br&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* Copyright 2003: Christian d&#39;Heureuse, Inventec Informatik AG, Switzerland.&#60;br&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* Home page: &#60;a href=&#34;http://www.source-code.biz&#34;&#62;www.source-code.biz&#60;/a&#62;&#60;br&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>*</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* &#60;p&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* Version history:&#60;br&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* 2003-07-22 Christian d&#39;Heureuse (chdh): Module created.&#60;br&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* 2005-08-11 chdh: Lincense changed from GPL to LGPL.&#60;br&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* 2006-11-21 chdh:&#60;br&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>*  &#38;nbsp; Method encode(String) renamed to encodeString(String).&#60;br&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>*  &#38;nbsp; Method decode(String) renamed to decodeString(String).&#60;br&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>*  &#38;nbsp; New method encode(byte[],int) added.&#60;br&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>*  &#38;nbsp; New method decode(String) added.&#60;br&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>*/</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class Base64Coder {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// Mapping table from 6-bit nibbles to Base64 characters.</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>private static char[]    map1 = new char[64];</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>   static {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>      int i=0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>      for (char c=&#39;A&#39;; c&#60;=&#39;Z&#39;; c++) map1[i++] = c;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>      for (char c=&#39;a&#39;; c&#60;=&#39;z&#39;; c++) map1[i++] = c;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>      for (char c=&#39;0&#39;; c&#60;=&#39;9&#39;; c++) map1[i++] = c;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>      map1[i++] = &#39;+&#39;; map1[i++] = &#39;/&#39;; }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// Mapping table from Base64 characters to 6-bit nibbles.</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>private static byte[]    map2 = new byte[128];</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>   static {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>      for (int i=0; i&#60;map2.length; i++) map2[i] = -1;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>      for (int i=0; i&#60;64; i++) map2[map1[i]] = (byte)i; }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* Encodes a string into Base64 format.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* No blanks or line breaks are inserted.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* @param s  a String to be encoded.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* @return   A String with the Base64 encoded data.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>*/</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public static String encodeString (String s) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_50'/>
+50
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_50'>1</a>
+<span>
+
+1. encodeString : replaced return value with &#34;&#34; for org/example/run7/Base64Coder::encodeString &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>   return new String(encode(s.getBytes())); }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* Encodes a byte array into Base64 format.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* No blanks or line breaks are inserted.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* @param in  an array containing the data bytes to be encoded.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* @return    A character array with the Base64 encoded data.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>*/</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public static char[] encode (byte[] in) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_59'/>
+59
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_59'>1</a>
+<span>
+
+1. encode : replaced return value with null for org/example/run7/Base64Coder::encode &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>   return encode(in,in.length); }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* Encodes a byte array into Base64 format.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_63'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* No blanks or line breaks are inserted.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* @param in   an array containing the data bytes to be encoded.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_65'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* @param iLen number of bytes to process in &#60;code&#62;in&#60;/code&#62;.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* @return     A character array with the Base64 encoded data.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>*/</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public static char[] encode (byte[] in, int iLen) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_69'/>
+69
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_69'>3</a>
+<span>
+
+1. encode : Replaced integer division with multiplication &rarr; KILLED<br/>
+
+2. encode : Replaced integer multiplication with division &rarr; KILLED<br/>
+
+3. encode : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>   int oDataLen = (iLen*4+2)/3;       // output length without padding</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_70'/>
+70
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_70'>3</a>
+<span>
+
+1. encode : Replaced integer multiplication with division &rarr; KILLED<br/>
+
+2. encode : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+3. encode : Replaced integer division with multiplication &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>   int oLen = ((iLen+2)/3)*4;         // output length including padding</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>   char[] out = new char[oLen];</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>   int ip = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>   int op = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_74'/>
+74
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_74'>2</a>
+<span>
+
+1. encode : changed conditional boundary &rarr; KILLED<br/>
+
+2. encode : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>   while (ip &#60; iLen) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_75'/>
+75
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_75'>2</a>
+<span>
+
+1. encode : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+2. encode : Replaced bitwise AND with OR &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      int i0 = in[ip++] &#38; 0xff;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_76'/>
+76
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_76'>4</a>
+<span>
+
+1. encode : changed conditional boundary &rarr; SURVIVED<br/>
+
+2. encode : negated conditional &rarr; KILLED<br/>
+
+3. encode : Replaced bitwise AND with OR &rarr; KILLED<br/>
+
+4. encode : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>      int i1 = ip &#60; iLen ? in[ip++] &#38; 0xff : 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_77'/>
+77
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_77'>4</a>
+<span>
+
+1. encode : Replaced bitwise AND with OR &rarr; KILLED<br/>
+
+2. encode : negated conditional &rarr; KILLED<br/>
+
+3. encode : changed conditional boundary &rarr; KILLED<br/>
+
+4. encode : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      int i2 = ip &#60; iLen ? in[ip++] &#38; 0xff : 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_78'/>
+78
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_78'>1</a>
+<span>
+
+1. encode : Replaced Unsigned Shift Right with Shift Left &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      int o0 = i0 &#62;&#62;&#62; 2;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_79'/>
+79
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_79'>4</a>
+<span>
+
+1. encode : Replaced bitwise OR with AND &rarr; KILLED<br/>
+
+2. encode : Replaced Shift Left with Shift Right &rarr; KILLED<br/>
+
+3. encode : Replaced Unsigned Shift Right with Shift Left &rarr; KILLED<br/>
+
+4. encode : Replaced bitwise AND with OR &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      int o1 = ((i0 &#38;   3) &#60;&#60; 4) | (i1 &#62;&#62;&#62; 4);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_80'/>
+80
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_80'>4</a>
+<span>
+
+1. encode : Replaced bitwise OR with AND &rarr; KILLED<br/>
+
+2. encode : Replaced Shift Left with Shift Right &rarr; KILLED<br/>
+
+3. encode : Replaced Unsigned Shift Right with Shift Left &rarr; KILLED<br/>
+
+4. encode : Replaced bitwise AND with OR &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      int o2 = ((i1 &#38; 0xf) &#60;&#60; 2) | (i2 &#62;&#62;&#62; 6);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_81'/>
+81
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_81'>1</a>
+<span>
+
+1. encode : Replaced bitwise AND with OR &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      int o3 = i2 &#38; 0x3F;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_82'/>
+82
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_82'>1</a>
+<span>
+
+1. encode : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      out[op++] = map1[o0];</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_83'/>
+83
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_83'>1</a>
+<span>
+
+1. encode : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      out[op++] = map1[o1];</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_84'/>
+84
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_84'>3</a>
+<span>
+
+1. encode : changed conditional boundary &rarr; SURVIVED<br/>
+
+2. encode : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+3. encode : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>      out[op] = op &#60; oDataLen ? map1[o2] : &#39;=&#39;; op++;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_85'/>
+85
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_85'>3</a>
+<span>
+
+1. encode : changed conditional boundary &rarr; KILLED<br/>
+
+2. encode : negated conditional &rarr; KILLED<br/>
+
+3. encode : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      out[op] = op &#60; oDataLen ? map1[o3] : &#39;=&#39;; op++; }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_86'/>
+86
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_86'>1</a>
+<span>
+
+1. encode : replaced return value with null for org/example/run7/Base64Coder::encode &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>   return out; }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_87'/>
+87
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_87'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_88'/>
+88
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_88'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_89'/>
+89
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_89'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* Decodes a string from Base64 format.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_90'/>
+90
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_90'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* @param s  a Base64 String to be decoded.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_91'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* @return   A String containing the decoded data.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_92'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* @throws   IllegalArgumentException if the input is not valid Base64 encoded data.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_93'/>
+93
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_93'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>*/</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_94'/>
+94
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_94'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public static String decodeString (String s) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_95'/>
+95
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_95'>1</a>
+<span>
+
+1. decodeString : replaced return value with &#34;&#34; for org/example/run7/Base64Coder::decodeString &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>   return new String(decode(s)); }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_96'/>
+96
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_96'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_97'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_98'/>
+98
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_98'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* Decodes a byte array from Base64 format.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_99'/>
+99
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_99'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* @param s  a Base64 String to be decoded.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_100'/>
+100
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_100'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* @return   An array containing the decoded data bytes.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_101'/>
+101
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_101'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* @throws   IllegalArgumentException if the input is not valid Base64 encoded data.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_102'/>
+102
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_102'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>*/</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_103'/>
+103
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_103'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public static byte[] decode (String s) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_104'/>
+104
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_104'>1</a>
+<span>
+
+1. decode : replaced return value with null for org/example/run7/Base64Coder::decode &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>   return decode(s.toCharArray()); }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_105'/>
+105
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_105'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_106'/>
+106
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_106'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_107'/>
+107
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_107'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* Decodes a byte array from Base64 format.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_108'/>
+108
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_108'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* No blanks or line breaks are allowed within the Base64 encoded data.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_109'/>
+109
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_109'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* @param in  a character array containing the Base64 encoded data.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_110'/>
+110
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_110'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* @return    An array containing the decoded data bytes.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_111'/>
+111
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_111'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>* @throws    IllegalArgumentException if the input is not valid Base64 encoded data.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_112'/>
+112
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_112'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>*/</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_113'/>
+113
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_113'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public static byte[] decode (char[] in) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_114'/>
+114
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_114'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>   int iLen = in.length;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_115'/>
+115
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_115'>2</a>
+<span>
+
+1. decode : Replaced integer modulus with multiplication &rarr; KILLED<br/>
+
+2. decode : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>   if (iLen%4 != 0) throw new IllegalArgumentException (&#34;Length of Base64 encoded input string is not a multiple of 4.&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_116'/>
+116
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_116'>5</a>
+<span>
+
+1. decode : negated conditional &rarr; KILLED<br/>
+
+2. decode : changed conditional boundary &rarr; KILLED<br/>
+
+3. decode : Replaced integer subtraction with addition &rarr; KILLED<br/>
+
+4. decode : Changed increment from -1 to 1 &rarr; KILLED<br/>
+
+5. decode : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>   while (iLen &#62; 0 &#38;&#38; in[iLen-1] == &#39;=&#39;) iLen--;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_117'/>
+117
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_117'>2</a>
+<span>
+
+1. decode : Replaced integer multiplication with division &rarr; KILLED<br/>
+
+2. decode : Replaced integer division with multiplication &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>   int oLen = (iLen*3) / 4;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_118'/>
+118
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_118'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>   byte[] out = new byte[oLen];</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_119'/>
+119
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_119'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>   int ip = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_120'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>   int op = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_121'/>
+121
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_121'>2</a>
+<span>
+
+1. decode : negated conditional &rarr; KILLED<br/>
+
+2. decode : changed conditional boundary &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>   while (ip &#60; iLen) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_122'/>
+122
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_122'>1</a>
+<span>
+
+1. decode : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      int i0 = in[ip++];</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_123'/>
+123
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_123'>1</a>
+<span>
+
+1. decode : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      int i1 = in[ip++];</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_124'/>
+124
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_124'>3</a>
+<span>
+
+1. decode : changed conditional boundary &rarr; SURVIVED<br/>
+
+2. decode : negated conditional &rarr; KILLED<br/>
+
+3. decode : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>      int i2 = ip &#60; iLen ? in[ip++] : &#39;A&#39;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_125'/>
+125
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_125'>3</a>
+<span>
+
+1. decode : changed conditional boundary &rarr; KILLED<br/>
+
+2. decode : negated conditional &rarr; KILLED<br/>
+
+3. decode : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      int i3 = ip &#60; iLen ? in[ip++] : &#39;A&#39;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_126'/>
+126
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_126'>8</a>
+<span>
+
+1. decode : changed conditional boundary &rarr; SURVIVED<br/>
+
+2. decode : changed conditional boundary &rarr; SURVIVED<br/>
+
+3. decode : changed conditional boundary &rarr; SURVIVED<br/>
+
+4. decode : changed conditional boundary &rarr; SURVIVED<br/>
+
+5. decode : negated conditional &rarr; KILLED<br/>
+
+6. decode : negated conditional &rarr; KILLED<br/>
+
+7. decode : negated conditional &rarr; KILLED<br/>
+
+8. decode : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>      if (i0 &#62; 127 || i1 &#62; 127 || i2 &#62; 127 || i3 &#62; 127)</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_127'/>
+127
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_127'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>         throw new IllegalArgumentException (&#34;Illegal character in Base64 encoded data.&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_128'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>      int b0 = map2[i0];</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_129'/>
+129
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_129'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>      int b1 = map2[i1];</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_130'/>
+130
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_130'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>      int b2 = map2[i2];</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_131'/>
+131
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_131'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>      int b3 = map2[i3];</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_132'/>
+132
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_132'>8</a>
+<span>
+
+1. decode : changed conditional boundary &rarr; SURVIVED<br/>
+
+2. decode : changed conditional boundary &rarr; SURVIVED<br/>
+
+3. decode : changed conditional boundary &rarr; SURVIVED<br/>
+
+4. decode : negated conditional &rarr; KILLED<br/>
+
+5. decode : negated conditional &rarr; KILLED<br/>
+
+6. decode : negated conditional &rarr; KILLED<br/>
+
+7. decode : negated conditional &rarr; KILLED<br/>
+
+8. decode : changed conditional boundary &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>      if (b0 &#60; 0 || b1 &#60; 0 || b2 &#60; 0 || b3 &#60; 0)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_133'/>
+133
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_133'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>         throw new IllegalArgumentException (&#34;Illegal character in Base64 encoded data.&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_134'/>
+134
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_134'>3</a>
+<span>
+
+1. decode : Replaced bitwise OR with AND &rarr; KILLED<br/>
+
+2. decode : Replaced Shift Left with Shift Right &rarr; KILLED<br/>
+
+3. decode : Replaced Unsigned Shift Right with Shift Left &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      int o0 = ( b0       &#60;&#60;2) | (b1&#62;&#62;&#62;4);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_135'/>
+135
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_135'>4</a>
+<span>
+
+1. decode : Replaced Shift Left with Shift Right &rarr; KILLED<br/>
+
+2. decode : Replaced bitwise OR with AND &rarr; KILLED<br/>
+
+3. decode : Replaced Unsigned Shift Right with Shift Left &rarr; KILLED<br/>
+
+4. decode : Replaced bitwise AND with OR &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      int o1 = ((b1 &#38; 0xf)&#60;&#60;4) | (b2&#62;&#62;&#62;2);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_136'/>
+136
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_136'>3</a>
+<span>
+
+1. decode : Replaced bitwise OR with AND &rarr; KILLED<br/>
+
+2. decode : Replaced bitwise AND with OR &rarr; KILLED<br/>
+
+3. decode : Replaced Shift Left with Shift Right &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      int o2 = ((b2 &#38;   3)&#60;&#60;6) |  b3;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_137'/>
+137
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_137'>1</a>
+<span>
+
+1. decode : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      out[op++] = (byte)o0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_138'/>
+138
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_138'>3</a>
+<span>
+
+1. decode : changed conditional boundary &rarr; SURVIVED<br/>
+
+2. decode : negated conditional &rarr; KILLED<br/>
+
+3. decode : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>      if (op&#60;oLen) out[op++] = (byte)o1;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_139'/>
+139
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_139'>3</a>
+<span>
+
+1. decode : negated conditional &rarr; KILLED<br/>
+
+2. decode : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+3. decode : changed conditional boundary &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>      if (op&#60;oLen) out[op++] = (byte)o2; }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_140'/>
+140
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_140'>1</a>
+<span>
+
+1. decode : replaced return value with null for org/example/run7/Base64Coder::decode &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>   return out; }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_141'/>
+141
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_141'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_142'/>
+142
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_142'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// Dummy constructor.</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_143'/>
+143
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_143'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>private Base64Coder() {}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_144'/>
+144
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_144'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@566aaeab_145'/>
+145
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_145'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>} // end class Base64Coder</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_50'>50</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_50'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>encodeString<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeString()]</span></span> replaced return value with &#34;&#34; for org/example/run7/Base64Coder::encodeString &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_59'>59</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_59'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeEmptyString()]</span></span> replaced return value with null for org/example/run7/Base64Coder::encode &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_69'>69</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_69'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Replaced integer division with multiplication &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Replaced integer multiplication with division &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_70'>70</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_70'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Replaced integer multiplication with division &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Replaced integer division with multiplication &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_74'>74</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_74'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_75'>75</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_75'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Replaced bitwise AND with OR &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_76'>76</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_76'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Replaced bitwise AND with OR &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_77'>77</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_77'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeString()]</span></span> Replaced bitwise AND with OR &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeString()]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_78'>78</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_78'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Replaced Unsigned Shift Right with Shift Left &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_79'>79</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_79'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Replaced bitwise OR with AND &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeString()]</span></span> Replaced Shift Left with Shift Right &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Replaced Unsigned Shift Right with Shift Left &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Replaced bitwise AND with OR &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_80'>80</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_80'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Replaced bitwise OR with AND &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Replaced Shift Left with Shift Right &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeString()]</span></span> Replaced Unsigned Shift Right with Shift Left &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Replaced bitwise AND with OR &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_81'>81</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_81'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeString()]</span></span> Replaced bitwise AND with OR &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_82'>82</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_82'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_83'>83</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_83'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_84'>84</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_84'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_85'>85</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_85'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeString()]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_86'>86</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_86'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>encode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()]</span></span> replaced return value with null for org/example/run7/Base64Coder::encode &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_95'>95</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_95'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decodeString<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeString()]</span></span> replaced return value with &#34;&#34; for org/example/run7/Base64Coder::decodeString &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_104'>104</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_104'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeEmptyString()]</span></span> replaced return value with null for org/example/run7/Base64Coder::decode &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_115'>115</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_115'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> Replaced integer modulus with multiplication &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeInvalidInputLength()]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_116'>116</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_116'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeEmptyString()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> Replaced integer subtraction with addition &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> Changed increment from -1 to 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_117'>117</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_117'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> Replaced integer multiplication with division &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> Replaced integer division with multiplication &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_121'>121</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_121'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> changed conditional boundary &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_122'>122</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_122'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_123'>123</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_123'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_124'>124</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_124'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_125'>125</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_125'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeString()]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_126'>126</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_126'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_132'>132</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_132'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> changed conditional boundary &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_134'>134</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_134'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> Replaced bitwise OR with AND &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> Replaced Shift Left with Shift Right &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeString()]</span></span> Replaced Unsigned Shift Right with Shift Left &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_135'>135</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_135'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> Replaced Shift Left with Shift Right &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> Replaced bitwise OR with AND &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> Replaced Unsigned Shift Right with Shift Left &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> Replaced bitwise AND with OR &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_136'>136</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_136'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeString()]</span></span> Replaced bitwise OR with AND &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeString()]</span></span> Replaced bitwise AND with OR &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeString()]</span></span> Replaced Shift Left with Shift Right &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_137'>137</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_137'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_138'>138</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_138'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_139'>139</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_139'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeString()]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> changed conditional boundary &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@566aaeab_140'>140</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@566aaeab_140'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()]</span></span> replaced return value with null for org/example/run7/Base64Coder::decode &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+
+<li class='mutator'>EMPTY_RETURNS</li>
+
+<li class='mutator'>FALSE_RETURNS</li>
+
+<li class='mutator'>INCREMENTS</li>
+
+<li class='mutator'>INVERT_NEGS</li>
+
+<li class='mutator'>MATH</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+
+<li class='mutator'>NULL_RETURNS</li>
+
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+
+<li class='mutator'>TRUE_RETURNS</li>
+
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeWithPadding()] (0 ms)</li><li>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeString()] (0 ms)</li><li>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeIllegalCharacter()] (0 ms)</li><li>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeWithPadding()] (0 ms)</li><li>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeEmptyString()] (0 ms)</li><li>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testEncodeString()] (0 ms)</li><li>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeEmptyString()] (0 ms)</li><li>org.example.run7.Base64CoderTest.[engine:junit-jupiter]/[class:org.example.run7.Base64CoderTest]/[method:testDecodeInvalidInputLength()] (0 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.15.0
+
+</body>
+</html>
